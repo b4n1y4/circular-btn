@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: rgb(59, 59, 59);
+}
+
+.btn-container {
+  /* background-color: red; */
+  width: 200px;
+
+  /* height: ; */
+}
+
+button {
+  width: 50px;
+  height: 50px;
+  background: rgb(255, 158, 0);
+  background: radial-gradient(
+    circle,
+    rgba(255, 158, 0, 1) 0%,
+    rgba(255, 59, 0, 1) 55%,
+    rgba(255, 106, 0, 1) 100%
+  );
+  border: 0;
+  border-radius: 100%;
+  cursor: pointer;
+  z-index: 0;
+  box-shadow: 0 2px 10px rgba(255, 59, 0, 0.3);
+  transition: transform 0.2s ease-out, scale 0.5s linear, opacity 0.3s linear;
+}
+
+img {
+  width: 50%;
+}
+
+.top,
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.plus {
+  z-index: 1;
+}
+
+.video.true {
+  transform: translateX(75px) translateY(50px) scale(0);
+  /* transform: scale(0); */
+  opacity: 0;
+}
+.camera.true {
+  transform: translateY(100px) scale(0);
+  /* transform: scale(0); */
+  opacity: 0;
+}
+.note.true {
+  transform: translateX(-75px) translateY(50px) scale(0);
+  /* transform: scale(0); */
+  opacity: 0;
+}
+
+.plus.open {
+  transform: rotate(-45deg);
+}

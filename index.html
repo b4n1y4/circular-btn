@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Circular button</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="root">
+      <div class="btn-container">
+        <div class="top">
+          <button class="camera hidden true">
+            <img src="./camera.png" alt="video" />
+          </button>
+        </div>
+        <div class="mid">
+          <button class="video hidden true">
+            <img src="./video.png" alt="video" />
+          </button>
+          <button class="note hidden true">
+            <img src="./edit.png" alt="video" />
+          </button>
+        </div>
+        <div class="bottom">
+          <button class="plus" id="menu-toggle" onclick="handleClick();">
+            <img src="./plus.png" alt="video" />
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      let menuOpen = false;
+      function handleClick() {
+        const buttons = [].slice.call(
+          document.getElementsByClassName("hidden")
+        );
+        buttons.forEach((button) => {
+          if (!menuOpen) {
+            document.getElementById("menu-toggle").classList.add("open");
+            button.classList.remove("true");
+          } else {
+            document.getElementById("menu-toggle").classList.remove("open");
+
+            button.classList.add("true");
+          }
+        });
+        menuOpen = !menuOpen;
+      }
+    </script>
+  </body>
+</html>
